@@ -1,0 +1,8 @@
+newmtl ToonBasic
+Kd 0,4626865 0,4626865 0,4626865
+d 1
+
+newmtl Obstacle
+Kd 0 0 0
+d 1
+
