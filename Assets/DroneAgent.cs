@@ -25,6 +25,8 @@ public class DroneAgent : Agent
 
     private bool resetAgent = false;
 
+	float lastDistance;
+
     public override void InitializeAgent()
     {
         academy = FindObjectOfType<RollerAcademy>();
@@ -44,16 +46,19 @@ public class DroneAgent : Agent
             //Done();
         }
 
-        Vector3 pos = Target.position;
-        pos.y = this.transform.position.y;
-        //float movingTowardsDot = Vector3.Dot(rBody.velocity, (pos - transform.position).normalized);
-        //AddReward(0.03f * movingTowardsDot);
+		/*
+		float movingTowardsDot = Vector3.Dot(rBody.velocity.normalized, (Target.position - transform.position).normalized);
 
-        //Debug.DrawRay(this.transform.position, this.transform.forward, Color.red, 2);
+		Debug.DrawRay(this.transform.position, transform.forward*5, Color.red, 1);
+		Debug.DrawRay(this.transform.position, (Target.position - transform.position).normalized*5, Color.red, 1);
 
-        //float facingDot = Vector3.Dot(transform.forward, (pos - transform.position).normalized);
-        //AddReward(0.01f * facingDot);
-        //Debug.Log(facingDot);
+		float facingDot = Vector3.Dot(transform.forward.normalized, (Target.position - transform.position).normalized);
+
+		if (facingDot > 0.9f) {
+			AddReward (0.01f);
+
+
+		}*/
 
         // Time penalty
         AddReward(-0.01f);
@@ -88,6 +93,11 @@ public class DroneAgent : Agent
         Vector3 euler = graphics.eulerAngles;
         euler.x = 0;
         graphics.eulerAngles = euler;*/
+
+		if (distanceToTarget < lastDistance) {
+			AddReward (0.02f);
+			lastDistance = distanceToTarget;
+		}
     }
 
     Vector3[] windDirections = new Vector3[]{
@@ -128,6 +138,8 @@ public class DroneAgent : Agent
         {
             Target.position = new Vector3(Target.position.x, hit.point.y + 0.5f, Target.position.z);
         }
+
+		lastDistance = 1000000;
     }
 
     public Transform Target;
@@ -150,6 +162,7 @@ public class DroneAgent : Agent
             this.rBody.angularVelocity = Vector3.zero;
             this.rBody.velocity = Vector3.zero;
             resetAgent = false;
+			lastDistance = 1000000;
         }
         else
         {
@@ -193,7 +206,7 @@ public class DroneAgent : Agent
         AddVectorObs(rBody.velocity);
 
         // Agent gyro
-        AddVectorObs(transform.forward);
-        AddVectorObs(transform.up);
+		AddVectorObs(Vector3.Dot(transform.forward.normalized, (Target.position - transform.position).normalized));
+        //AddVectorObs(transform.up);
     }
 }
