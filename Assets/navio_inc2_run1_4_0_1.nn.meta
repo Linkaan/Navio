@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 21c873938a2b24d258238639c416bd52
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: Assets/navio_inc2_run1_4_0_1.nn
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 83221ad3db87f4b3b91b041047cb2bc5, type: 3}

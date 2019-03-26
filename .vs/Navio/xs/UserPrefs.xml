@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{02B247AF-71AC-33EE-E433-934E667E5DDC}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/DroneAgent.cs">
+    <Files>
+      <File FileName="Assets/DroneAgent.cs" Line="299" Column="9" />
+      <File FileName="Assets/deletemesoon.cs" Line="10" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 8896d5e1b87eb4d5f99e48c8937f2ff8
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: Assets/NavioBrain012_inc1.nn
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 83221ad3db87f4b3b91b041047cb2bc5, type: 3}
